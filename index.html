@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Orders</title>
+</head>
+<body>
+    <h1>Hotel Orders</h1>
+
+    <!-- Form to add/update orders -->
+    <form id="order-form">
+        <input type="text" id="table-number" placeholder="Table Number">
+        <input type="text" id="order-items" placeholder="Order Items">
+        <select id="order-status">
+            <option value="Pending">Pending</option>
+            <option value="Served">Served</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Table to display orders -->
+    <table id="order-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Table Number</th>
+                <th>Order Items</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Orders will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // JavaScript code for handling CRUD operations
+        // Fetch orders from the server and populate the table
+        function fetchOrders() {
+            // You can use fetch or other AJAX libraries for this
+        }
+
+        // Add or update an order
+        function addOrUpdateOrder() {
+            // You can use fetch or other AJAX libraries for this
+        }
+
+        // Delete an order
+        function deleteOrder(orderId) {
+            // You can use fetch or other AJAX libraries for this
+        }
+
+        // Populate the table and add event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchOrders();
+
+            // Form submit event
+            document.getElementById('order-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                addOrUpdateOrder();
+            });
+
+            // Delete button click event
+            document.getElementById('order-table').addEventListener('click', function (e) {
+                if (e.target && e.target.matches('button.delete-button')) {
+                    const orderId = e.target.dataset.orderId;
+                    deleteOrder(orderId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
